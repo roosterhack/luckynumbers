@@ -34,10 +34,22 @@
   <body>
     <body>
       <h1>祝你好運</h1>
+      <button type="button" id="clearNums" class="generate clear">清除</button>
+        <div class="numSelect">
+          <div class="quantity"><input id='n1' type="number" min="1" max="49" step="1"  placeholder="1號"></div>
+          <div class="quantity"><input id='n2' type="number" min="1" max="49" step="1"  placeholder="2號"></div>
+          <div class="quantity"><input id='n3' type="number" min="1" max="49" step="1"  placeholder="3號"></div>
+          <div class="quantity"><input id='n4' type="number" min="1" max="49" step="1"  placeholder="4號"></div>
+          <div class="quantity"><input id='n5' type="number" min="1" max="49" step="1"  placeholder="5號"></div>
+          <div class="quantity"><input id='n6' type="number" min="1" max="49" step="1"  placeholder="6號"></div>
+          <div class="quantity"><input id='n7' type="number" min="1" max="49" step="1"  placeholder="7號"></div>
+        </div>
       <div class="outterWrapper">
         <ul id="history"></ul>
-
-        <button type="button" id="generate" class="clearfix">按這裡</button>
+        <div class="btns">
+          <button type="button" id="generate" class="generate">按這裡</button>
+          <button type="button" id="clear" class="generate clear">清除</button>
+        </div>
       </div>
    
 
@@ -45,6 +57,5 @@
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
 
-  
   </body>
 </html>

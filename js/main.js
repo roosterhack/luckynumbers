@@ -1,37 +1,42 @@
-var button = document.getElementById('generate');
+var generateButton = document.getElementById('generate');
+var clearButton = document.getElementById('clear');
+var clearNumsButton = document.getElementById('clearNums');
 
-button.addEventListener('click', function () {
+//get all input numbers
+
+generateButton.addEventListener('click', function () {
+  var error = false;
+  var n1 = document.querySelector('#n1').value;
+  var n2 = document.querySelector('#n2').value;
+  var n3 = document.querySelector('#n3').value;
+  var n4 = document.querySelector('#n4').value;
+  var n5 = document.querySelector('#n5').value;
+  var n6 = document.querySelector('#n6').value;
+  var n7 = document.querySelector('#n7').value;
+  var inputNums = [...n1, ...n2, ...n3, ...n4, ...n5, ...n6, ...n7];
+  var lastResults = inputNums.map((n) => {
+    if (n) {
+      return Number(n);
+    }
+    error = true;
+    return;
+  });
+
   //get random numbers
 
   var numbers = [];
-  var ball = document.getElementsByClassName('ball');
 
-  while (numbers.length < 7) {
-    const takeOutNum = Math.floor(Math.random() * 49) + 1;
+  while (numbers.length < 7 && lastResults) {
+    // const takeOutNum = Math.floor(Math.random() * 49) + 1;
 
     var random = Math.floor(Math.random() * 49) + 1;
 
-    if (numbers.indexOf(random) == -1 && random !== takeOutNum) {
+    if (numbers.indexOf(random) == -1 && !lastResults.includes(random)) {
       numbers.push(random);
     }
   }
 
-  //color balls
-
-  for (var i = 0; i < ball.length; i++) {
-    ball[i].style.backgroundColor = 'white';
-    ball[i].style.color = '#3d3c3a';
-
-    for (var j = 0; j < numbers.length; j++) {
-      if (numbers[j] == parseInt(ball[i].innerHTML)) {
-        ball[i].style.backgroundColor = '#fa8b60';
-        ball[i].style.color = 'white';
-      }
-    }
-  }
-
   //add numbers to history
-
   var history = [];
   var historyDiv = document.getElementById('history');
   var para = document.createElement('li');
@@ -42,4 +47,18 @@ button.addEventListener('click', function () {
     para.appendChild(node);
     historyDiv.appendChild(para);
   }
+});
+
+clearNumsButton.addEventListener('click', () => {
+  n1.value = '';
+  n2.value = '';
+  n3.value = '';
+  n4.value = '';
+  n5.value = '';
+  n6.value = '';
+  n7.value = '';
+});
+clearButton.addEventListener('click', () => {
+  var ul = document.getElementById('history');
+  ul.innerHTML = '';
 });
