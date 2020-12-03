@@ -26,7 +26,7 @@ generateButton.addEventListener(
     //get random numbers
     // if (!lastResults.includes(null)) {
     var numbers = [];
-    console.log(lastResults);
+    // console.log(lastResults);
     while (numbers.length < 7) {
       // const takeOutNum = Math.floor(Math.random() * 49) + 1;
 
