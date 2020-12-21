@@ -14,7 +14,29 @@ generateButton.addEventListener(
     var n5 = document.querySelector('#n5').value;
     var n6 = document.querySelector('#n6').value;
     var n7 = document.querySelector('#n7').value;
-    var inputNums = [n1, n2, n3, n4, n5, n6, n7];
+    var n8 = document.querySelector('#n8').value;
+    var n9 = document.querySelector('#n9').value;
+    var n10 = document.querySelector('#n10').value;
+    var n11 = document.querySelector('#n11').value;
+    var n12 = document.querySelector('#n12').value;
+    var n13 = document.querySelector('#n13').value;
+    var n14 = document.querySelector('#n14').value;
+    var inputNums = [
+      n1,
+      n2,
+      n3,
+      n4,
+      n5,
+      n6,
+      n7,
+      n8,
+      n9,
+      n10,
+      n11,
+      n12,
+      n13,
+      n14,
+    ];
 
     var lastResults = inputNums.map((n) => {
       if (n) {
@@ -60,6 +82,13 @@ clearNumsButton.addEventListener('click', () => {
   n5.value = '';
   n6.value = '';
   n7.value = '';
+  n8.value = '';
+  n9.value = '';
+  n10.value = '';
+  n11.value = '';
+  n12.value = '';
+  n13.value = '';
+  n14.value = '';
 });
 clearButton.addEventListener('click', () => {
   var ul = document.getElementById('history');
