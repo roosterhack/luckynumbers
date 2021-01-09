@@ -4,89 +4,85 @@ var clearNumsButton = document.getElementById('clearNums');
 
 //get all input numbers
 
-generateButton.addEventListener(
-  'click',
-  function () {
-    var n1 = document.querySelector('#n1').value;
-    var n2 = document.querySelector('#n2').value;
-    var n3 = document.querySelector('#n3').value;
-    var n4 = document.querySelector('#n4').value;
-    var n5 = document.querySelector('#n5').value;
-    var n6 = document.querySelector('#n6').value;
-    var n7 = document.querySelector('#n7').value;
-    var n8 = document.querySelector('#n8').value;
-    var n9 = document.querySelector('#n9').value;
-    var n10 = document.querySelector('#n10').value;
-    var n11 = document.querySelector('#n11').value;
-    var n12 = document.querySelector('#n12').value;
-    var n13 = document.querySelector('#n13').value;
-    var n14 = document.querySelector('#n14').value;
-    var n15 = document.querySelector('#n15').value;
-    var n16 = document.querySelector('#n16').value;
-    var n17 = document.querySelector('#n17').value;
-    var n18 = document.querySelector('#n18').value;
-    var n19 = document.querySelector('#n19').value;
-    var n20 = document.querySelector('#n20').value;
-    var n21 = document.querySelector('#n21').value;
-    var inputNums = [
-      n1,
-      n2,
-      n3,
-      n4,
-      n5,
-      n6,
-      n7,
-      n8,
-      n9,
-      n10,
-      n11,
-      n12,
-      n13,
-      n14,
-      n15,
-      n16,
-      n17,
-      n18,
-      n19,
-      n20,
-      n21,
-    ];
+generateButton.addEventListener('click', function () {
+  var n1 = document.querySelector('#n1').value;
+  var n2 = document.querySelector('#n2').value;
+  var n3 = document.querySelector('#n3').value;
+  var n4 = document.querySelector('#n4').value;
+  var n5 = document.querySelector('#n5').value;
+  var n6 = document.querySelector('#n6').value;
+  var n7 = document.querySelector('#n7').value;
+  var n8 = document.querySelector('#n8').value;
+  var n9 = document.querySelector('#n9').value;
+  var n10 = document.querySelector('#n10').value;
+  var n11 = document.querySelector('#n11').value;
+  var n12 = document.querySelector('#n12').value;
+  var n13 = document.querySelector('#n13').value;
+  var n14 = document.querySelector('#n14').value;
+  var n15 = document.querySelector('#n15').value;
+  var n16 = document.querySelector('#n16').value;
+  var n17 = document.querySelector('#n17').value;
+  var n18 = document.querySelector('#n18').value;
+  var n19 = document.querySelector('#n19').value;
+  var n20 = document.querySelector('#n20').value;
+  var n21 = document.querySelector('#n21').value;
+  var inputNums = [
+    n1,
+    n2,
+    n3,
+    n4,
+    n5,
+    n6,
+    n7,
+    n8,
+    n9,
+    n10,
+    n11,
+    n12,
+    n13,
+    n14,
+    n15,
+    n16,
+    n17,
+    n18,
+    n19,
+    n20,
+    n21,
+  ];
 
-    var lastResults = inputNums.map((n) => {
-      if (n) {
-        return Number(n);
-      }
-      return null;
-    });
-
-    //get random numbers
-    // if (!lastResults.includes(null)) {
-    var numbers = [];
-    // console.log(lastResults);
-    while (numbers.length < 7) {
-      // const takeOutNum = Math.floor(Math.random() * 49) + 1;
-
-      var random = Math.floor(Math.random() * 49) + 1;
-
-      if (numbers.indexOf(random) === -1 && !lastResults.includes(random)) {
-        numbers.push(random);
-      }
+  var lastResults = inputNums.map((n) => {
+    if (n) {
+      return Number(n);
     }
+    return null;
+  });
 
-    //add numbers to history
-    var history = [];
-    var historyDiv = document.getElementById('history');
-    var para = document.createElement('li');
-    history.push(numbers.join(' - '));
+  //get random numbers
+  // if (!lastResults.includes(null)) {
+  var numbers = [];
+  // console.log(lastResults);
+  while (numbers.length < 7) {
+    // const takeOutNum = Math.floor(Math.random() * 49) + 1;
 
-    for (var k in history) {
-      var node = document.createTextNode(history[k]);
-      para.appendChild(node);
-      historyDiv.appendChild(para);
+    var random = Math.floor(Math.random() * 49) + 1;
+
+    if (numbers.indexOf(random) === -1 && !lastResults.includes(random)) {
+      numbers.push(random);
     }
   }
-  // }
-);
+
+  //add numbers to history
+  var history = [];
+  var historyDiv = document.getElementById('history');
+  var para = document.createElement('li');
+  history.push(numbers.join(' - '));
+
+  for (var k in history) {
+    var node = document.createTextNode(history[k]);
+    para.appendChild(node);
+    historyDiv.appendChild(para);
+  }
+});
 
 clearNumsButton.addEventListener('click', () => {
   n1.value = '';
