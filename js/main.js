@@ -5,6 +5,8 @@ var clearNumsButton = document.getElementById('clearNums');
 //get all input numbers
 
 generateButton.addEventListener('click', function () {
+  var bets = document.getElementById('history').children;
+
   var n1 = document.querySelector('#n1').value;
   var n2 = document.querySelector('#n2').value;
   var n3 = document.querySelector('#n3').value;
@@ -50,6 +52,8 @@ generateButton.addEventListener('click', function () {
     n21,
   ];
 
+  if (bets.length >= 50) return null;
+
   var lastResults = inputNums.map((n) => {
     if (n) {
       return Number(n);
@@ -58,12 +62,9 @@ generateButton.addEventListener('click', function () {
   });
 
   //get random numbers
-  // if (!lastResults.includes(null)) {
   var numbers = [];
-  // console.log(lastResults);
-  while (numbers.length < 7) {
-    // const takeOutNum = Math.floor(Math.random() * 49) + 1;
 
+  while (numbers.length < 7) {
     var random = Math.floor(Math.random() * 49) + 1;
 
     if (numbers.indexOf(random) === -1 && !lastResults.includes(random)) {
