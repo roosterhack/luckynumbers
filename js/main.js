@@ -52,7 +52,7 @@ generateButton.addEventListener('click', function () {
     n21,
   ];
 
-  if (bets.length >= 50) return null;
+  if (bets.length >= 200) return null;
 
   var lastResults = inputNums.map((n) => {
     if (n) {
