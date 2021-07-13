@@ -67,7 +67,7 @@ generateButton.addEventListener('click', function () {
   //get random numbers
   var numbers = [];
 
-  const numOfEachBet = hasValue ? 7 : 6;
+  const numOfEachBet = hasValue ? 6 : 7;
 
   while (numbers.length < numOfEachBet) {
     var random = Math.floor(Math.random() * 49) + 1;
