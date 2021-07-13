@@ -54,8 +54,11 @@ generateButton.addEventListener('click', function () {
 
   if (bets.length >= 200) return null;
 
+  let hasValue = false;
+
   var lastResults = inputNums.map((n) => {
     if (n) {
+      hasValue = true;
       return Number(n);
     }
     return null;
@@ -64,7 +67,9 @@ generateButton.addEventListener('click', function () {
   //get random numbers
   var numbers = [];
 
-  while (numbers.length < 6) {
+  const numOfEachBet = hasValue ? 7 : 6;
+
+  while (numbers.length < numOfEachBet) {
     var random = Math.floor(Math.random() * 49) + 1;
 
     if (numbers.indexOf(random) === -1 && !lastResults.includes(random)) {
