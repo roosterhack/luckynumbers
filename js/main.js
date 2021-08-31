@@ -4,7 +4,7 @@ var clearNumsButton = document.getElementById('clearNums');
 
 //get all input numbers
 
-generateButton.addEventListener('click', function () {
+const generateNums = () => {
   var bets = document.getElementById('history').children;
 
   var n1 = document.querySelector('#n1').value;
@@ -52,7 +52,7 @@ generateButton.addEventListener('click', function () {
     n21,
   ];
 
-  if (bets.length >= 200) return null;
+  if (bets.length >= 500) return null;
 
   let hasValue = false;
 
@@ -88,6 +88,18 @@ generateButton.addEventListener('click', function () {
     para.appendChild(node);
     historyDiv.appendChild(para);
   }
+};
+
+const howManyBets = (numBets) => {
+  for (i = 0; i < numBets; i++) {
+    generateNums();
+  }
+};
+
+generateButton.addEventListener('click', () => {
+  var numberOfBets = document.querySelector('#numBets').value;
+  console.log(numberOfBets, 'numberOfBets');
+  howManyBets(numberOfBets || 1);
 });
 
 clearNumsButton.addEventListener('click', () => {

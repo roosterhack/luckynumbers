@@ -268,12 +268,16 @@ body {
   background-color: #ececec;
 }
 
+section {
+  width: 100vw;
+}
+
 .outterWrapper {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  /* width: 100%;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
 }
 
 h1 {
@@ -284,8 +288,9 @@ h1 {
   font-size: 2rem;
 }
 
-.btns {
+.btns.cta {
   display: flex;
+  justify-content: center;
 }
 
 .generate {
@@ -357,4 +362,13 @@ input[type='number'] {
 
 .quantity input:focus {
   outline: 0;
+}
+
+.quantity.bets {
+  display: flex;
+  justify-content: center;
+}
+
+.quantity.bets input {
+  width: 210px;
 }
