@@ -279,6 +279,16 @@ section {
   justify-content: center;
   align-items: center; */
 }
+.outterWrapper label {
+align-self: center;
+margin: 40px 0;
+font-size: 2rem;
+}
+
+.outterWrapper label select {
+  padding: 0.5rem 1rem;
+  font-size: 1.5rem;
+}
 
 h1 {
   text-align: center;
@@ -314,14 +324,14 @@ h1 {
   color: #222;
 }
 
-#history {
+.bet-history {
   text-align: center;
   width: 80%;
   border-radius: 8px;
   min-width: 360px;
 }
 
-#history li {
+.bet-history li {
   font-weight: bold;
   color: #3d3c3a;
   list-style-type: decimal;
@@ -371,4 +381,21 @@ input[type='number'] {
 
 .quantity.bets input {
   width: 210px;
+}
+
+.hide {
+  display:none;
+}
+
+.buttonWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 30px auto;
+}
+
+.buttonWrapper button {
+  margin: 0 20px;
+  padding: 1rem 2rem;
+  font-size: 2rem;
 }

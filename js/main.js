@@ -1,10 +1,32 @@
 var generateButton = document.getElementById('generate');
 var clearButton = document.getElementById('clear');
 var clearNumsButton = document.getElementById('clearNums');
-
+var markSixSelectButton = document.getElementById('markSixSelect');
+var horseSelectButton = document.getElementById('horseSelect');
+var clearHorseBetButton = document.getElementById('clearHorseBets');
+var generateHorseBetsButton = document.getElementById('generateHorseBets');
 //get all input numbers
 
+const showHideSection = () => {
+  var horseSection = document.getElementById('horses')
+  var markSixSection = document.getElementById('markSix')
+
+  if (markSixSection.className === 'hide') {
+    markSixSection.classList.remove('hide')
+    horseSection.classList.add('hide')
+    horseSelectButton.disabled = false
+    markSixSelectButton.disabled = true
+  } else {
+    markSixSection.classList.add('hide')
+    horseSection.classList.remove('hide')
+    horseSelectButton.disabled = true
+    markSixSelectButton.disabled = false
+  }
+}
+
+
 const generateNums = () => {
+
   var bets = document.getElementById('history').children;
 
   var n1 = document.querySelector('#n1').value;
@@ -98,9 +120,61 @@ const howManyBets = (numBets) => {
 
 generateButton.addEventListener('click', () => {
   var numberOfBets = document.querySelector('#numBets').value;
-  console.log(numberOfBets, 'numberOfBets');
   howManyBets(numberOfBets || 1);
 });
+
+
+const generateHorseBets = () => {
+
+  var bets = document.getElementById('horseHistory').children;
+
+  var numHorses = document.querySelector('#numOfHorse').value;
+
+
+  if (bets.length >= 30) return null;
+
+
+  //get random numbers
+  var numbers = [];
+
+
+  while (numbers.length < numHorses) {
+    var random = Math.floor(Math.random() * numHorses);
+
+    
+    numbers.push(random);
+    
+  }
+
+  //add numbers to history
+  var history = [];
+  var historyDiv = document.getElementById('horseHistory');
+  var para = document.createElement('li');
+  history.push(numbers.join(' - '));
+
+  for (var k in history) {
+    var node = document.createTextNode(history[k]);
+    para.appendChild(node);
+    historyDiv.appendChild(para);
+  }
+};
+
+const howManyHorseBets = (numBets) => {
+  for (i = 0; i < numBets; i++) {
+    generateHorseBets();
+  }
+};
+
+generateHorseBetsButton.addEventListener('click', () => {
+  var numberOfBets = document.querySelector('#numHorseBets').value;
+  howManyHorseBets(numberOfBets || 1);
+});
+
+
+
+
+horseSelectButton.addEventListener('click', ()=> showHideSection())
+markSixSelectButton.addEventListener('click', ()=> showHideSection())
 
 clearNumsButton.addEventListener('click', () => {
   n1.value = '';
@@ -125,7 +199,15 @@ clearNumsButton.addEventListener('click', () => {
   n20.value = '';
   n21.value = '';
 });
+
 clearButton.addEventListener('click', () => {
   var ul = document.getElementById('history');
+  ul.innerHTML = '';
+});
+
+
+
+clearHorseBetButton.addEventListener('click', () => {
+  var ul = document.getElementById('horseHistory');
   ul.innerHTML = '';
 });

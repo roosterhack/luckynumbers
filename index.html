@@ -32,9 +32,50 @@
   </head>
 
   <body>
-    <section>
+    <div class="buttonWrapper">
+      <button type="button" id="markSixSelect" disabled>六合彩</button>
+      <button type="button" id="horseSelect">賽馬</button>
+    </div>
+      <section id="horses" class="hide">
+      <h1>賽馬</h1>
+      <form>
+      <div class="outterWrapper">
+        <label for="numOfHorse">
+          馬數
+        <select name="numOfHorse" id="numOfHorse">
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+          <option value="11">11</option>
+          <option value="12">12</option>
+          <option value="13">13</option>
+          <option value="14">14</option>
+        </select>
+      </label>
+        <div class="quantity bets">
+          <input
+            id="numHorseBets"
+            type="number"
+            min="1"
+            max="10"
+            step="1"
+            placeholder="投注次數"
+          />
+        </div>
+        <ul id="horseHistory" class="bet-history"></ul>
+        <div class="btns cta">
+          <button type="button" id="generateHorseBets" class="generate">按這裡</button>
+          <button type="button" id="clearHorseBets" class="generate clear">清除</button>
+        </div>
+      </div>
+      </form>
+    </section>
+    <section id="markSix" >
       <h1>祝你好運</h1>
-      <button type="button" id="clearNums" class="generate clear">清除</button>
+      <button type="button" id="clearNums" class="generate clear" >清除</button>
       <div class="numSelect">
         <div class="quantity">
           <input
@@ -258,7 +299,7 @@
             placeholder="投注次數"
           />
         </div>
-        <ul id="history"></ul>
+        <ul id="history" class="bet-history"></ul>
         <div class="btns cta">
           <button type="button" id="generate" class="generate">按這裡</button>
           <button type="button" id="clear" class="generate clear">清除</button>
