@@ -138,11 +138,14 @@ const generateHorseBets = () => {
   var numbers = [];
 
 
-  while (numbers.length < numHorses) {
-    var random = Math.floor(Math.random() * numHorses);
+  while (numbers.length < 4) {
+    var random = Math.floor(Math.random() * numHorses) + 1;
 
     
-    numbers.push(random);
+    if (numbers.indexOf(random) === -1) {
+      numbers.push(random);
+    }
+
     
   }
 
