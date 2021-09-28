@@ -1,6 +1,7 @@
 var generateButton = document.getElementById('generate');
 var clearButton = document.getElementById('clear');
 var clearNumsButton = document.getElementById('clearNums');
+var clearHorseNumsButton = document.getElementById('clearHorseNums');
 var markSixSelectButton = document.getElementById('markSixSelect');
 var horseSelectButton = document.getElementById('horseSelect');
 var clearHorseBetButton = document.getElementById('clearHorseBets');
@@ -128,7 +129,48 @@ const generateHorseBets = () => {
 
   var bets = document.getElementById('horseHistory').children;
 
-  var numHorses = document.querySelector('#numOfHorse').value;
+  // var numHorses = document.querySelector('#numOfHorse').value;
+  var hN1 = document.querySelector('#hN1').value;
+  var hN2 = document.querySelector('#hN2').value;
+  var hN3 = document.querySelector('#hN3').value;
+  var hN4 = document.querySelector('#hN4').value;
+  var hN5 = document.querySelector('#hN5').value;
+  var hN6 = document.querySelector('#hN6').value;
+  var hN7 = document.querySelector('#hN7').value;
+  var hN8 = document.querySelector('#hN8').value;
+  var hN9 = document.querySelector('#hN9').value;
+  var hN10 = document.querySelector('#hN10').value;
+  var hN11 = document.querySelector('#hN11').value;
+  var hN12 = document.querySelector('#hN12').value;
+  var hN13 = document.querySelector('#hN13').value;
+  var hN14 = document.querySelector('#hN14').value;
+
+  var inputNums = [
+    hN1,
+    hN2,
+    hN3,
+    hN4,
+    hN5,
+    hN6,
+    hN7,
+    hN8,
+    hN9,
+    hN10,
+    hN11,
+    hN12,
+    hN13,
+    hN14
+  ];
+
+  let hasValue = false;
+
+  var lastResults = inputNums.map((n) => {
+    if (n) {
+      hasValue = true;
+      return Number(n);
+    }
+    return null;
+  });
 
 
   if (bets.length >= 30) return null;
@@ -139,10 +181,10 @@ const generateHorseBets = () => {
 
 
   while (numbers.length < 4) {
-    var random = Math.floor(Math.random() * numHorses) + 1;
+    var random = Math.floor(Math.random() * 14) + 1;
 
     
-    if (numbers.indexOf(random) === -1) {
+    if (numbers.indexOf(random) === -1 && !lastResults.includes(random)) {
       numbers.push(random);
     }
 
@@ -201,6 +243,24 @@ clearNumsButton.addEventListener('click', () => {
   n19.value = '';
   n20.value = '';
   n21.value = '';
+});
+
+clearHorseNumsButton.addEventListener('click', () => {
+  hN1.value = '';
+  hN2.value = '';
+  hN3.value = '';
+  hN4.value = '';
+  hN5.value = '';
+  hN6.value = '';
+  hN7.value = '';
+  hN8.value = '';
+  hN9.value = '';
+  hN10.value = '';
+  hN11.value = '';
+  hN12.value = '';
+  hN13.value = '';
+  hN14.value = '';
+
 });
 
 clearButton.addEventListener('click', () => {
