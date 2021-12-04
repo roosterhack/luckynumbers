@@ -225,7 +225,25 @@
     </section>
     <section id="markSix">
       <h1>六合彩</h1>
-      <button type="button" id="clearNums" class="generate clear">清除</button>
+      <div class="flex">
+        <button type="button" id="clearNums" class="generate clear">
+          清除
+        </button>
+
+        <input
+          id="numOfResults"
+          type="number"
+          min="1"
+          max="7"
+          step="1"
+          value="7"
+          placeholder="顯示多少個數字?"
+        />
+        <div class="button-wrapper flex">
+          <button onclick="increment()">+</button>
+          <button onclick="decrement()">-</button>
+        </div>
+      </div>
       <div class="numSelect">
         <div class="quantity">
           <input

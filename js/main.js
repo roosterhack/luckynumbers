@@ -6,6 +6,16 @@ var markSixSelectButton = document.getElementById("markSixSelect");
 var horseSelectButton = document.getElementById("horseSelect");
 var clearHorseBetButton = document.getElementById("clearHorseBets");
 var generateHorseBetsButton = document.getElementById("generateHorseBets");
+var numOfResults = document.getElementById("numOfResults");
+
+// number of results
+function increment() {
+  document.getElementById("numOfResults").stepUp();
+  console.log("dashdaksjh");
+}
+function decrement() {
+  document.getElementById("numOfResults").stepDown();
+}
 //get all input numbers
 
 const showHideSection = () => {
@@ -75,11 +85,11 @@ const generateNums = () => {
 
   if (bets.length >= 500) return null;
 
-  let hasValue = false;
+  // let hasValue = false;
 
   var lastResults = inputNums.map((n) => {
     if (n) {
-      hasValue = true;
+      // hasValue = true;
       return Number(n);
     }
     return null;
@@ -88,8 +98,7 @@ const generateNums = () => {
   //get random numbers
   var numbers = [];
 
-  // const numOfEachBet = hasValue ? 6 : 7;
-  const numOfEachBet = 7;
+  const numOfEachBet = numOfResults.value;
 
   while (numbers.length < numOfEachBet) {
     var random = Math.floor(Math.random() * 49) + 1;
