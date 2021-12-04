@@ -36,153 +36,155 @@
       <button type="button" id="markSixSelect" disabled>六合彩</button>
       <button type="button" id="horseSelect">賽馬</button>
     </div>
-      <section id="horses">
+    <section id="horses" class="hide">
       <h1>賽馬</h1>
       <form>
-      <div class="outterWrapper">
-        <button type="button" id="clearHorseNums" class="generate clear" >清除</button>
-        <div class="numSelect">
-          <div class="quantity">
-            <input
-              id="hN1"
-              type="number"
-              min="1"
-              max="49"
-              step="1"
-              placeholder="1號"
-            />
-          </div>
-          <div class="quantity">
-            <input
-              id="hN2"
-              type="number"
-              min="1"
-              max="49"
-              step="1"
-              placeholder="2號"
-            />
-          </div>
-          <div class="quantity">
-            <input
-              id="hN3"
-              type="number"
-              min="1"
-              max="49"
-              step="1"
-              placeholder="3號"
-            />
-          </div>
-          <div class="quantity">
-            <input
-              id="hN4"
-              type="number"
-              min="1"
-              max="49"
-              step="1"
-              placeholder="4號"
-            />
-          </div>
-          <div class="quantity">
-            <input
-              id="hN5"
-              type="number"
-              min="1"
-              max="49"
-              step="1"
-              placeholder="5號"
-            />
-          </div>
-          <div class="quantity">
-            <input
-              id="hN6"
-              type="number"
-              min="1"
-              max="49"
-              step="1"
-              placeholder="6號"
-            />
-          </div>
-          <div class="quantity">
-            <input
-              id="hN7"
-              type="number"
-              min="1"
-              max="49"
-              step="1"
-              placeholder="7號"
-            />
-          </div>
-          <div class="quantity">
-            <input
-              id="hN8"
-              type="number"
-              min="1"
-              max="49"
-              step="1"
-              placeholder="8號"
-            />
-          </div>
-          <div class="quantity">
-            <input
-              id="hN9"
-              type="number"
-              min="1"
-              max="49"
-              step="1"
-              placeholder="9號"
-            />
-          </div>
-          <div class="quantity">
-            <input
-              id="hN10"
-              type="number"
-              min="1"
-              max="49"
-              step="1"
-              placeholder="10號"
-            />
-          </div>
-          <div class="quantity">
-            <input
-              id="hN11"
-              type="number"
-              min="1"
-              max="49"
-              step="1"
-              placeholder="11號"
-            />
-          </div>
-          <div class="quantity">
-            <input
-              id="hN12"
-              type="number"
-              min="1"
-              max="49"
-              step="1"
-              placeholder="12號"
-            />
-          </div>
-          <div class="quantity">
-            <input
-              id="hN13"
-              type="number"
-              min="1"
-              max="49"
-              step="1"
-              placeholder="13號"
-            />
-          </div>
-          <div class="quantity">
-            <input
-              id="hN14"
-              type="number"
-              min="1"
-              max="49"
-              step="1"
-              placeholder="14號"
-            />
-          </div>
-        <!-- <label for="numOfHorse">
+        <div class="outterWrapper">
+          <button type="button" id="clearHorseNums" class="generate clear">
+            清除
+          </button>
+          <div class="numSelect">
+            <div class="quantity">
+              <input
+                id="hN1"
+                type="number"
+                min="1"
+                max="49"
+                step="1"
+                placeholder="1號"
+              />
+            </div>
+            <div class="quantity">
+              <input
+                id="hN2"
+                type="number"
+                min="1"
+                max="49"
+                step="1"
+                placeholder="2號"
+              />
+            </div>
+            <div class="quantity">
+              <input
+                id="hN3"
+                type="number"
+                min="1"
+                max="49"
+                step="1"
+                placeholder="3號"
+              />
+            </div>
+            <div class="quantity">
+              <input
+                id="hN4"
+                type="number"
+                min="1"
+                max="49"
+                step="1"
+                placeholder="4號"
+              />
+            </div>
+            <div class="quantity">
+              <input
+                id="hN5"
+                type="number"
+                min="1"
+                max="49"
+                step="1"
+                placeholder="5號"
+              />
+            </div>
+            <div class="quantity">
+              <input
+                id="hN6"
+                type="number"
+                min="1"
+                max="49"
+                step="1"
+                placeholder="6號"
+              />
+            </div>
+            <div class="quantity">
+              <input
+                id="hN7"
+                type="number"
+                min="1"
+                max="49"
+                step="1"
+                placeholder="7號"
+              />
+            </div>
+            <div class="quantity">
+              <input
+                id="hN8"
+                type="number"
+                min="1"
+                max="49"
+                step="1"
+                placeholder="8號"
+              />
+            </div>
+            <div class="quantity">
+              <input
+                id="hN9"
+                type="number"
+                min="1"
+                max="49"
+                step="1"
+                placeholder="9號"
+              />
+            </div>
+            <div class="quantity">
+              <input
+                id="hN10"
+                type="number"
+                min="1"
+                max="49"
+                step="1"
+                placeholder="10號"
+              />
+            </div>
+            <div class="quantity">
+              <input
+                id="hN11"
+                type="number"
+                min="1"
+                max="49"
+                step="1"
+                placeholder="11號"
+              />
+            </div>
+            <div class="quantity">
+              <input
+                id="hN12"
+                type="number"
+                min="1"
+                max="49"
+                step="1"
+                placeholder="12號"
+              />
+            </div>
+            <div class="quantity">
+              <input
+                id="hN13"
+                type="number"
+                min="1"
+                max="49"
+                step="1"
+                placeholder="13號"
+              />
+            </div>
+            <div class="quantity">
+              <input
+                id="hN14"
+                type="number"
+                min="1"
+                max="49"
+                step="1"
+                placeholder="14號"
+              />
+            </div>
+            <!-- <label for="numOfHorse">
           馬數
         <select name="numOfHorse" id="numOfHorse">
           <option value="4">4</option>
@@ -198,28 +200,32 @@
           <option value="14" selected="selected">14</option>
         </select>
       </label> -->
-        <div class="quantity bets">
-          <input
-            id="numHorseBets"
-            type="number"
-            min="1"
-            max="10"
-            step="1"
-            placeholder="投注次數"
-          />
+            <div class="quantity bets">
+              <input
+                id="numHorseBets"
+                type="number"
+                min="1"
+                max="10"
+                step="1"
+                placeholder="投注次數"
+              />
+            </div>
+            <ul id="horseHistory" class="bet-history"></ul>
+            <div class="btns cta">
+              <button type="button" id="generateHorseBets" class="generate">
+                按這裡
+              </button>
+              <button type="button" id="clearHorseBets" class="generate clear">
+                清除
+              </button>
+            </div>
+          </div>
         </div>
-        <ul id="horseHistory" class="bet-history"></ul>
-        <div class="btns cta">
-          <button type="button" id="generateHorseBets" class="generate">按這裡</button>
-          <button type="button" id="clearHorseBets" class="generate clear">清除</button>
-        </div>
-      </div>
-      </div>
       </form>
     </section>
-    <section id="markSix" class="hide">
-      <h1>祝你好運</h1>
-      <button type="button" id="clearNums" class="generate clear" >清除</button>
+    <section id="markSix">
+      <h1>六合彩</h1>
+      <button type="button" id="clearNums" class="generate clear">清除</button>
       <div class="numSelect">
         <div class="quantity">
           <input
